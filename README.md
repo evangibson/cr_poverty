@@ -7,7 +7,7 @@ ___
 ## Table of Contents (ReadMe)
 - Summary
 - File Descriptions
-- Exploratory Analysis
+- [Exploratory Analysis](https://github.com/evangibson/cr_poverty/blob/master/README.md#exploratory-analysis)
 - Feature Engineering
 - Considerations
 - Model Results
