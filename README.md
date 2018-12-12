@@ -20,11 +20,12 @@ ___
 ## File Descriptions
 - simple_predictions [(Folder)](https://github.com/evangibson/cr_poverty/tree/master/simple_predictions)
   - All of the enclosed models are the simplest versions of their title purpose. As they contain little parameter tuning, feature engineering, and data considerations, they are most useful for orienting oneself to classifier models that could work for this project and for understanding the focus of the competition. 
-- images (Folder)
+- images [(Folder)](https://github.com/evangibson/cr_poverty/tree/master/images)
   - This folder contains PNG images that are used in the README
-- Individual Exploratory Analysis.ipynb
-  - This notebook is used for the exploration of the poverty dataset. It contains several descriptive charts and is here to explain some of the nuance within our research context.
-
+- [Exploratory Analysis.ipynb](https://github.com/evangibson/cr_poverty/blob/master/Exploratory%20Analysis.ipynb)
+  - This notebook is used for the exploration of the poverty dataset. It contains descriptive charts and is here to explain some of the nuance within our research context.
+- [Random Forest and Decision Tree Models.ipynb](https://github.com/evangibson/cr_poverty/blob/master/Random%20Forest%20and%20Decision%20Tree%20Models%20(Tuned).ipynb)
+  - This file contains tuned Random Forest and Decision Tree models. This file also contains details for visualizing a single tree of a random forest or a decision tree.
 ___ 
 ## Exploratory Analysis
 
