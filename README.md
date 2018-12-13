@@ -19,9 +19,9 @@ Social programs have a hard time making sure the right people are given enough a
 
 Microfinance organizations around the world have spent years developing "just right" methods to determine how their funds should be allocated. To make things difficult for those organizations, the poorest segment of any population experiences especially acute outlier circumstances. From income level to the number of mobile phones, the variability of descriptive characteristics among those who occupy the poorest level of society is staggering. In Latin America, one popular method utilizes a unique algorithm to verify income qualification using measurable characteristics outside of income/expense records. It’s called the Proxy Means Test (or PMT). With PMT, agencies use a model that considers a family’s observable household attributes like the material of their walls and ceiling, or the assets found in the home to classify them and predict their level of need.
 
-Even with the nuanced approach of the PMT, accuracy (among of metrics) remains a problem. As the Latin American population grows and poverty declines, reorientation of the PMT is necessary. The [Inter-American Development Bank](https://www.iadb.org) (IDB) has launched a public Kaggle competition to improve the PMT. The IDB is branching away from traditional econometrics in an effort to attain better, more reliable predictions. 
+Even with the nuanced approach of the PMT, accuracy (among other metrics) remains a problem. As the Latin American population grows and poverty declines, reorientation of the PMT is necessary. The [Inter-American Development Bank](https://www.iadb.org) (IDB) has launched a public Kaggle competition to improve the PMT. The IDB is branching away from traditional econometrics in an effort to attain better, more reliable predictions. 
 
-Beyond Costa Rica, many countries face this same problem of inaccurately assessing social need. If Kagglers can generate an improvement, the new algorithm could be implemented in other countries around the world.
+Beyond Costa Rica, many countries face this same problem of inaccurately assessing social need. The present repository will detail the author's exploration of the PMT and of attempts to tune a predictive model.
 
 ___ 
 ## File Descriptions
