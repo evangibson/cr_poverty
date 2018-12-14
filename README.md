@@ -21,7 +21,12 @@ Microfinance organizations around the world have spent years developing "just ri
 
 Even with the nuanced approach of the PMT, accuracy (among other metrics) remains a problem. As the Latin American population grows and poverty declines, reorientation of the PMT is necessary. The [Inter-American Development Bank](https://www.iadb.org) (IDB) has launched a public Kaggle competition to improve the PMT. The IDB is branching away from traditional econometrics in an effort to attain better, more reliable predictions. 
 
-Beyond Costa Rica, many countries face this same problem of inaccurately assessing social need. The present repository will detail the author's exploration of the PMT and of attempts to tune a predictive model.
+Beyond Costa Rica, many countries face this same problem of inaccurately assessing social need. 
+
+The present repository will address the following:
+  - Detail the author's exploration of the given data.
+  - Attempt to tune an alternative PMT model.
+  - Investigate the PMT as a concept for the betterment of development practices.
 
 ___ 
 ## File Descriptions
