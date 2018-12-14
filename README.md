@@ -41,6 +41,10 @@ ___
 ___ 
 ## Exploratory Analysis
 
+Without understanding the data we will use, we cannot hope to derive meaningful, scalable predictions. 
+
+The training data for the present training set contain 143 "unique" variables. In the training data, there are 9,557 individuals who belong to 2,988 distinct households.
+
 ___ 
 ## Feature Engineering
 
