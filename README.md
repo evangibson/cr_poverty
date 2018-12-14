@@ -58,7 +58,7 @@ The training data contains 143 "unique" variables. For comparison, the test data
 | Head of Household Education `edjefa` | x | x |
 | Mean Age `age` |   34.3    |    34.5 |
 
-
+the characteristics of the training and test data are reasonably similar..
 ___ 
 ## Feature Engineering
 
