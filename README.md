@@ -43,7 +43,21 @@ ___
 
 Without understanding the data we will use, we cannot hope to derive meaningful, scalable predictions. 
 
-The training data for the present training set contain 143 "unique" variables. In the training data, there are 9,557 individuals who belong to 2,988 distinct households.
+The training data contains 143 "unique" variables. For comparison, the test data contains 142 variables. The only difference between the variables in the two files are in the presence of the `Target` column. The following details some of the most important characteristics of both sets:
+
+| Variable        | Train           | Test  |
+| ------------- |:-------------:| -----:|
+| Participants      | 9,557 | 23,856 |
+| Households      | 2,988      |   7,352 |
+| Mean Income `v2a1` |   165231.6    |    174872.6 |
+| Refrigerator Ratio `refrig` | 0.96 | 0.96 |
+| Mean Education `meaneduc`| 9.23      | 9.15 |
+| Gender Ratio `male` |   0.48    |    0.49 |
+| Household Size `hhsize` |   x    |    x |
+| Head of Household Education `edjefe` | x | x |
+| Head of Household Education `edjefa` | x | x |
+| Mean Age `age` |   34.3    |    34.5 |
+
 
 ___ 
 ## Feature Engineering
