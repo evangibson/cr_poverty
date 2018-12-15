@@ -46,7 +46,7 @@ Without understanding the data we will use, we cannot hope to derive meaningful,
 The training data contains 143 "unique" variables. For comparison, the test data contains 142 variables. The only difference between the variables in the two files are in the presence of the `Target` column. The following details some of the most important characteristics of both sets:
 
 | Variable        | Train           | Test  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| :-----:|
 | Participants      | 9,557 | 23,856 |
 | Households      | 2,988      |   7,352 |
 | Mean Income `v2a1` |   165231.6    |    174872.6 |
@@ -58,7 +58,7 @@ The training data contains 143 "unique" variables. For comparison, the test data
 | Head of Household Education `edjefa` | x | x |
 | Mean Age `age` |   34.3    |    34.5 |
 
-the characteristics of the training and test data are reasonably similar..
+In all, the training and test sets are reasonably
 ___ 
 ## Feature Engineering
 
@@ -67,6 +67,13 @@ ___
 
 ___
 ## Model Results
+
+| Metric    | Random Forest (Tuned)   | Random Forest (Simple)  | Decision Tree (Simple) | Decision Tree (Tuned) | Gradient Boosting |
+| ------    |:-----------------------:| :----------------------:| :---------------------:| :--------------------:|:-----------------:|
+| Accuracy  |      **95.71**                |     91.79           |  91.68                |       86.72     |       88.65        |
+| Macro F1  |      **0.930**     |         0.874             |       0.875                |      0.796          |       0.839          |
+| Weighted F1  |      **0.956**         |     0.915          |       0.917           |           0.867       |            X    |
+| # of Features (for 95% importance)  |    106    |   86    |    76            |        104            |        80       |
 
 ___
 ## Acknowledgments and References
