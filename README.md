@@ -45,7 +45,7 @@ Without understanding the data we will use, we cannot hope to derive meaningful,
 
 The training data contains 143 "unique" variables. For comparison, the test data contains 142 variables. The only difference between the variables in the two files are in the presence of the `Target` column. The following details some of the most important characteristics of both sets:
 
-| Variable        | Train           | Test  |
+| Data Set        | Train           | Test  |
 | ------------- |:-------------:| :-----:|
 | Participants      | 9,557 | 23,856 |
 | Households      | 2,988      |   7,352 |
@@ -68,7 +68,7 @@ ___
 ___
 ## Model Results
 
-| Metric    | Random Forest (Tuned)   | Random Forest (Simple)  | Decision Tree (Simple) | Decision Tree (Tuned) | Gradient Boosting |
+| Model    | Random Forest (Tuned)   | Random Forest (Simple)  | Decision Tree (Simple) | Decision Tree (Tuned) | Gradient Boosting |
 | ------    |:-----------------------:| :----------------------:| :---------------------:| :--------------------:|:-----------------:|
 | Accuracy  |      **95.71**                |     91.79           |  91.68                |       86.72     |       88.65        |
 | Macro F1  |      **0.930**     |         0.874             |       0.875                |      0.796          |       0.839          |
