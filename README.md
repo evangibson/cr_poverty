@@ -49,20 +49,23 @@ The training data contains 143 "unique" variables. For comparison, the test data
 | ------------- |:-------------:| :-----:|
 | Participants      | 9,557 | 23,856 |
 | Households      | 2,988      |   7,352 |
-| Mean Income `v2a1` |   165231.6    |    174872.6 |
+| Mean Income `v2a1` |   165,231.6    |    174,872.6 |
 | Refrigerator Ratio `refrig` | 0.96 | 0.96 |
 | Mean Education `meaneduc`| 9.23      | 9.15 |
 | Gender Proportion  `male` |   0.48    |    0.49 |
-| Household Size `hhsize` |   x    |    x |
-| Head of Household Education `edjefe` | x | x |
-| Head of Household Education `edjefa` | x | x |
+| Mean Household Size `hhsize` |   4.00    |    4.02 |
 | Mean Age `age` |   34.3    |    34.5 |
 
-In all, the training and test sets are reasonably
+In all, the training and test sets are reasonably similar. That said, if they weren't, would we necesarily have an issue that makes the data sets unusable? The present author's opinion is that differences in the characteristics of training and test data do not necessarily preclude them for usefulness in model-building. 
+
+Why? 
+
+It is arguably more important for a model's training data to match the _collection_ context and for the test data to match the model's _usage_ context. In most model-building, the training and test data are randomly split at the 80/20 level; therefore, there is generally less concern for collection contexts of training and test data to be different from one another. However, in some cases, broad economic studies use data derived from the general population, rather than from the usage context. While this is less of an issue when describing the state of affairs concerning the general population, it can prevent targeted models from attaining the best results in their intended scopes.
+
 ___ 
 ## Feature Engineering
 
-Of all the variables included in the present data, there were few that related composite details concerning an individual's household. For instance, the variable `qmobilephone` indicates the number of mobile phones in a given individual's household. However, feature engineering is required to run a model that considers the proportion of mobile phones per household to a household size (`phones_per_person_household`). The following illustrates how the author engineered the `qmobilephone`/`hhsize` feature for modeling:
+Of all the variables included in the present data, there were few that related composite details concerning an individual's household. For instance, the variable `qmobilephone` indicates the number of mobile phones in a given individual's household. However, feature engineering is required to run a model that considers the proportion of mobile phones per household to a household size (`phone_per_person_household`). The following illustrates how the author engineered the `qmobilephone`/`hhsize` feature for modeling:
 
 ```python
 df_train['phone_per_person_household'] = df_train['qmobilephone']/df_train['hhsize']
@@ -85,7 +88,7 @@ ___
 | Macro F1  |      **0.930**     |         0.874             |       0.875                |      0.796          |       0.839          |
 | Weighted F1  |      **0.956**         |     0.915          |       0.917           |           0.867       |            X    |
 
-In the most relevant metrics of evaluation, the present random forest model (tuned) performed the best. 
+In the most relevant metrics of evaluation, the tuned random forest model performs the best (against the other models that are present).   
 ___
 ## Acknowledgments and References
 - [Will Koehrsen](https://www.kaggle.com/willkoehrsen/a-complete-introduction-and-walkthrough)
