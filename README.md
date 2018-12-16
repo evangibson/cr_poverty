@@ -9,7 +9,6 @@ ___
 - [File Descriptions](https://github.com/evangibson/cr_poverty#file-descriptions)
 - [Exploratory Analysis](https://github.com/evangibson/cr_poverty/blob/master/README.md#exploratory-analysis)
 - [Feature Engineering](https://github.com/evangibson/cr_poverty#feature-engineering)
-- [Considerations](https://github.com/evangibson/cr_poverty#considerations)
 - [Model Results](https://github.com/evangibson/cr_poverty#model-results)
 - [Acknowledgments and References](https://github.com/evangibson/cr_poverty#acknowledgments-and-references)
 
@@ -101,8 +100,6 @@ As it turns out, the `phone_per_person_household` variable ended up being one of
 Most of the engineered variables were built to clarify relationships throughout households. By clarifying the experience an individual has within their immediate familial context, we can better understand our data.
 
 The author also built variables that consolidated some of the underrepresented groups under the assumption that the dimensionality of certain groups do not effectively add insight to the data. For example, the author combined the `techozinc`, `techoentrepiso`, `techocane`, and `techootro` variables into `roof_waste_material` because the materials noted in those "techo..." variables are waste materials. It may be the case that the impacts each of the roofing variables has on `Target` is similiar in characteristic, meaning that the most salient fact about all the people who fall into those groups is that they have roofs made of _waste_ materials. 
-___ 
-## Considerations
 
 ___
 ## Model Results
@@ -113,7 +110,15 @@ ___
 | Macro F1  |      **0.930**     |         0.874             |       0.875                |      0.796          |       0.839          |
 | Weighted F1  |      **0.956**         |     0.915          |       0.917           |           0.867       |            X    |
 
-In the most relevant metrics of evaluation, the tuned random forest model performs the best (against the other models that are present).   
+In the most relevant metrics of evaluation, the tuned random forest model performs the best (against the other models that are present). The following images contain the detailed metrics of the tuned random forest model:
+
+![rf_imp](https://github.com/evangibson/cr_poverty/blob/master/images/rft_imp.PNG "rf_imp") ![rf_cm](https://github.com/evangibson/cr_poverty/blob/master/images/cm_rft.PNG "rf_cm") ![rf_mets](https://github.com/evangibson/cr_poverty/blob/master/images/mets_rft.PNG "rf_mets")
+
+In all of the metrics explored in the visuals above, the random forest model thrives. The following visual shows one of trees in that forest:
+
+![rf_tree](https://github.com/evangibson/cr_poverty/blob/master/images/rftree.png "rf_tree")
+
+Understandably, the tree is rather large. It is included for in-depth exploration purposes.
 ___
 ## Acknowledgments and References
 - [Adam P](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
