@@ -52,7 +52,7 @@ The training data contains 143 "unique" variables. For comparison, the test data
 | Mean Income `v2a1` |   165231.6    |    174872.6 |
 | Refrigerator Ratio `refrig` | 0.96 | 0.96 |
 | Mean Education `meaneduc`| 9.23      | 9.15 |
-| Gender Ratio `male` |   0.48    |    0.49 |
+| Gender Proportion  `male` |   0.48    |    0.49 |
 | Household Size `hhsize` |   x    |    x |
 | Head of Household Education `edjefe` | x | x |
 | Head of Household Education `edjefa` | x | x |
@@ -62,6 +62,17 @@ In all, the training and test sets are reasonably
 ___ 
 ## Feature Engineering
 
+Of all the variables included in the present data, there were few that related composite details concerning an individual's household. For instance, the variable `qmobilephone` indicates the number of mobile phones in a given individual's household. However, feature engineering is required to run a model that considers the proportion of mobile phones per household to a household size (`phones_per_person_household`). The following illustrates how the author engineered the `qmobilephone`/`hhsize` feature for modeling:
+
+```python
+df_train['phone_per_person_household'] = df_train['qmobilephone']/df_train['hhsize']
+```
+
+As it turns out, the `phone_per_person_household` variable ended up being one of the most important variables in the models in which it was employed. By engineering custom features, we can focus modeling efforts to deal with unique variable combinations. In addition to `phone_per_person_household`, the author engineered 40 other variables. 
+
+Most of the engineered variables were built to clarify relationships throughout households. By clarifying the experience an individual has within their immediate familial context, we can better understand our data.
+
+The author also built variables that consolidated some of the underrepresented groups under the assumption that the dimensionality of certain groups do not effectively add insight to the data. For example, the author combined the `techozinc`, `techoentrepiso`, `techocane`, and `techootro` variables into `roof_waste_material` because the materials noted in those "techo..." variables are waste materials. It may be the case that the impacts each of the roofing variables has on `Target` is similiar in characteristic, meaning that the most salient fact about all the people who fall into those groups is that they have roofs made of _waste_ materials. 
 ___ 
 ## Considerations
 
