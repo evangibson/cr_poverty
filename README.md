@@ -27,6 +27,12 @@ The present repository will address the following:
   - Attempts to tune an alternative PMT model.
   - Investigate the PMT as a concept for the betterment of development practices.
 
+The `Target` variable is classified (ordinally) as follows:
+- 1 = extreme poverty 
+- 2 = moderate poverty 
+- 3 = vulnerable households 
+- 4 = non vulnerable households
+
 ___ 
 ## File Descriptions
 - simple_predictions [(Folder)](https://github.com/evangibson/cr_poverty/tree/master/simple_predictions)
