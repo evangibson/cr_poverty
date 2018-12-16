@@ -84,8 +84,8 @@ ___
 | Accuracy  |      **95.71**                |     91.79           |  91.68                |       86.72     |       88.65        |
 | Macro F1  |      **0.930**     |         0.874             |       0.875                |      0.796          |       0.839          |
 | Weighted F1  |      **0.956**         |     0.915          |       0.917           |           0.867       |            X    |
-| # of Features (for 95% importance)  |    106    |   86    |    76            |        104            |        80       |
 
+In the most relevant metrics of evaluation, the present random forest model (tuned) performed the best. 
 ___
 ## Acknowledgments and References
 - [Will Koehrsen](https://www.kaggle.com/willkoehrsen/a-complete-introduction-and-walkthrough)
