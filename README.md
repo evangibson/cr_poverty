@@ -25,7 +25,7 @@ Beyond Costa Rica, many countries face this same problem of inaccurately assessi
 
 The present repository will address the following:
   - Detail the author's exploration of the given data.
-  - Attempt to tune an alternative PMT model.
+  - Attempts to tune an alternative PMT model.
   - Investigate the PMT as a concept for the betterment of development practices.
 
 ___ 
@@ -43,7 +43,7 @@ ___
 
 Without understanding the data we will use, we cannot hope to derive meaningful, scalable predictions. 
 
-The training data contains 143 "unique" variables. For comparison, the test data contains 142 variables. The only difference between the variables in the two files are in the presence of the `Target` column. The following details some of the most important characteristics of both sets:
+The training data contains 143 "unique" variables. For comparison, the test data contains 142 variables. The only difference between the variables in the two files are in the presence of the `Target` column. The following details some of the most "important" characteristics of both sets:
 
 | Data Set        | Train           | Test  |
 | ------------- |:-------------:| :-----:|
@@ -56,11 +56,36 @@ The training data contains 143 "unique" variables. For comparison, the test data
 | Mean Household Size `hhsize` |   4.00    |    4.02 |
 | Mean Age `age` |   34.3    |    34.5 |
 
+Income lies at the heart of the PMT. Many organizations use income to determine an individual's worthiness for social programs, interest rates, and credit limits. If our model disregarded income, it would undoubtedly mischaracterize its target. The following is the income distribution for the training set:
+
+![inc_dist](https://github.com/evangibson/cr_poverty/blob/master/images/income_dist.PNG "inc_dist")
+
+It may appear like the high income outliers in this data will skew our model's results. However, if one inspects the data more carefully, it is clear that the high income outliers lie in the "4" bracket of `Target`. These outliers, if handled non-linearly, present the opportunity for our model to display income thresholds that greatly, and perhaps appropriately, impact `Target`. The following graphic displays income as it occurs throughout `Target` groups (in the training data):  
+
+![inc_cat](https://github.com/evangibson/cr_poverty/blob/master/images/inc_targ_box.PNG "inc_cat")
+
+On a related note, during exploration of the income, it becomes obvious that no one who owns a fully paid house (`tipovivi1`) reported income. While this fact does not preclude those who own a house from being considered by our model, it does illuminate some of the data collection context. Why is it that those who own their houses do not report income? It could be the case that the income for the other individuals was self reported as part of an application process. It could be the case that the data for those who own their houses were collected under significantly different circumstances than those who do not own their houses. Ultimately, the answer is unclear. That said, it will be important to understand that there is a possibility that the present data were consolidated from different sources under different methodologies.  
+
+
+Visual exploratory analysis is an important aspect of most statistical methodlogy. By visually representing data, we can identify non-linear patterns that could impact our findings. For example, a simple countplot of the `escolari` variable shows us that there are two "spikes" in the amount of schooling our population receives (at 6 and at 11 years):
+
+![esc_count](https://github.com/evangibson/cr_poverty/blob/master/images/escolari_count.PNG "esc_count")
+
+While not enough to paint the whole picture, this graph displays prevalent aspects of the data. If education ends up being at the nexus of the model's most important features, a researcher's understanding of the societal impactors that have driven these spikes might be invaluable to deriving meaningful insight.
+
+In addition to helping researchers understand the characteristics of the data, visual analysis can help researchers determine metrics for model success. The following graph displays the count of individuals belonging to each of the `Target` groups:
+
+![target_count](https://github.com/evangibson/cr_poverty/blob/master/images/target_count.PNG "target_count")
+
+As shown above, there are significantly more individuals belonging to the "4" group than to any other `Target` group. By understanding this, we can avoid the pitfalls that might come from overreliance on accuracy. Think about this, if the data were 90% comprised of `4 = Target` individuals and our model randomly guessed "4" for every prediction, we would have a 90% accuracy. Even though this sounds like a reasonably successful model, _it isn't_. Using this visualization, we can also see that we might do well to measure our model's weighted F1 score, due to the skewwing towards class "4" (even though the contest makers decided to use macro F1 as the primary performance indicator).
+
+
 In all, the training and test sets are reasonably similar. That said, if they weren't, would we necesarily have an issue that makes the data sets unusable? The present author's opinion is that differences in the characteristics of training and test data do not necessarily preclude them for usefulness in model-building. 
 
 Why? 
 
-It is arguably more important for a model's training data to match the _collection_ context and for the test data to match the model's _usage_ context. In most model-building, the training and test data are randomly split at the 80/20 level; therefore, there is generally less concern for collection contexts of training and test data to be different from one another. However, in some cases, broad economic studies use data derived from the general population, rather than from the usage context. While this is less of an issue when describing the state of affairs concerning the general population, it can prevent targeted models from attaining the best results in their intended scopes.
+It is arguably more important for a model's training data to match the _collection_ context and for the test data to match the model's _usage_ context. In most model-building, the training and test data are randomly split at the 80/20 level; therefore, there is generally less concern for collection contexts of training and test data to be different from one another. However, in some cases, broad economic studies use data derived from the general population, rather than from a model's proposed usage context. While this is less of an issue when describing the state of affairs concerning the general population, it can prevent targeted models from attaining the best results in their intended scopes.
+
 
 ___ 
 ## Feature Engineering
@@ -91,5 +116,7 @@ ___
 In the most relevant metrics of evaluation, the tuned random forest model performs the best (against the other models that are present).   
 ___
 ## Acknowledgments and References
+- [Adam P](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+  - For all things markdown
 - [Will Koehrsen](https://www.kaggle.com/willkoehrsen/a-complete-introduction-and-walkthrough)
   - Will's detailed exploratory analysis and modeling were helpful for building my understanding of the data.
